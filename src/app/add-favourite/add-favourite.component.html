@@ -1,0 +1,17 @@
+<div *ngIf="!showInput">
+    <h4>Add to existing Lists</h4>
+    <div class="display:block" *ngFor="let list of favLists">
+        <a style="cursor:pointer;" mat-dialog-close (click)="addToExisting(list)">{{list}}</a>
+    </div>
+</div>
+<hr />
+
+<button mat-button class="addBtn btn btn-primary" type="button" (click)="addNewList()">Create List</button>
+<button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+<br />
+<div *ngIf="showInput">
+    <input class="search" mat-input [(ngModel)]="listName" name="search" placeholder="Enter List Name" required>
+    <button mat-raised-button mat-dialog-close (click)="addToFavourities(listName)"
+        class="saveBtn btn btn-primary">Add</button>
+    <button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+</div>
