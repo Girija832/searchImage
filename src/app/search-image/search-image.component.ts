@@ -6,7 +6,7 @@ import { AddFavouriteComponent } from '../add-favourite/add-favourite.component'
 @Component({
   selector: 'app-search-image',
   templateUrl: './search-image.component.html',
-  styleUrls: ['./search-image.component.css']
+  styleUrls: ['./search-image.component.scss']
 })
 export class SearchImageComponent implements OnInit {
   response: any;

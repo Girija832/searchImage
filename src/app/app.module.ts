@@ -11,6 +11,10 @@ import { MaterialModule } from '../material/material.module';
 import { SavedImagesComponent } from './saved-images/saved-images.component';
 import { FormsModule } from '@angular/forms';
 
+import { SearchImageReducer } from './store/reducer';
+import { StoreModule } from '@ngrx/store';
+import { SearchImageEffects } from './store/effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -25,8 +29,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
-    
+    FormsModule,
+    StoreModule.forRoot({ search: SearchImageReducer }),
+    EffectsModule.forRoot([SearchImageEffects])
   ],
   providers: [],
   entryComponents:[AddFavouriteComponent],

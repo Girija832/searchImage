@@ -3,7 +3,7 @@ import { SearchService } from '../search.service';
 @Component({
   selector: 'app-saved-images',
   templateUrl: './saved-images.component.html',
-  styleUrls: ['./saved-images.component.css']
+  styleUrls: ['./saved-images.component.scss']
 })
 export class SavedImagesComponent implements OnInit {
   favImage: any;

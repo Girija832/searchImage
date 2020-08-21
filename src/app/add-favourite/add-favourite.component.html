@@ -5,13 +5,18 @@
     </div>
 </div>
 <hr />
-
-<button mat-button class="addBtn btn btn-primary" type="button" (click)="addNewList()">Create List</button>
-<button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+<div class="button-row">
+    <button mat-button mat-raised-button color="primary" (click)="addNewList()">Create List</button>
+    <button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+</div>
 <br />
 <div *ngIf="showInput">
-    <input class="search" mat-input [(ngModel)]="listName" name="search" placeholder="Enter List Name" required>
-    <button mat-raised-button mat-dialog-close (click)="addToFavourities(listName)"
-        class="saveBtn btn btn-primary">Add</button>
-    <button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="listName" name="search" placeholder="Enter List Name" required>
+    </mat-form-field>
+    <div class="button-row">
+        <button mat-raised-button color="primary" mat-dialog-close (click)="addToFavourities(listName)"
+        class="saveBtn">Add</button>
+        <button mat-button mat-raised-button (click)="onCancelClick()">Cancel</button>
+    </div>
 </div>

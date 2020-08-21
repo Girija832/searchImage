@@ -4,11 +4,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 
+import { Store } from '@ngrx/store';
+import { AddToCart, RemoveFromCart } from '../store/actions';
+
 
 @Component({
   selector: 'app-add-favourite',
   templateUrl: './add-favourite.component.html',
-  styleUrls: ['./add-favourite.component.css']
+  styleUrls: ['./add-favourite.component.scss']
 })
 export class AddFavouriteComponent implements OnInit {
   listName: any = "";
@@ -28,7 +31,12 @@ export class AddFavouriteComponent implements OnInit {
   showInput: boolean;
   favList: boolean;
   favLists: any[];
-  constructor(private searchService: SearchService, public snackBar: MatSnackBar, private dialogRef: MatDialogRef<AddFavouriteComponent>, @Inject(MAT_DIALOG_DATA) data) {
+  inCart: boolean = false;
+  constructor(private searchService: SearchService,
+    public snackBar: MatSnackBar,
+    private store: Store<{ items: []; cart: [] }>,
+    private dialogRef: MatDialogRef<AddFavouriteComponent>,
+    @Inject(MAT_DIALOG_DATA) data,) {
     this.data = data;
     //this.link = data.pageURL
     this.pageUrl = data.user.name
@@ -69,5 +77,10 @@ export class AddFavouriteComponent implements OnInit {
   onCancelClick(): void {
     this.dialogRef.close();
   }
+
+  // addToCart(item) {
+  //   this.store.dispatch(new AddToCart(item));
+  //   this.inCart = true;
+  // }
 
 }

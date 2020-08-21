@@ -1,0 +1,24 @@
+
+.box:hover {
+    opacity:0.3;
+}
+.mt-10 {
+    margin-top:10px;
+}
+
+.mydivouter {
+    margin-left:15px;
+    margin-bottom:5px;
+    background-color: rgb(230, 230, 230);
+}
+
+.mybuttonoverlap {
+    position: absolute;
+    z-index: 2;
+    top: 44px;
+    display: none;
+    left: 59px;	
+}
+.mydivouter:hover .mybuttonoverlap{ 
+    display:block;
+}
